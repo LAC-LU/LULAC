@@ -13,9 +13,10 @@ const Blog = require("./models/blogModel");
 const Team = require("./models/teamModel");
 const Event = require("./models/eventModel");
 const isAuth = require("./util");
-const { MONGODB_URL,USER, PASSWORD } = require('./config');
-
-
+var PORT = process.env.PORT;
+var USER = process.env.USER;
+var PASSWORD = process.env.PASSWORD;
+var MONGODB_URL = process.env.MONGODB_URL;
 const app=express();
 
 app.use(bodyparser.urlencoded({extended: true}));
@@ -36,7 +37,7 @@ mongoose.connect(MONGODB_URL,{ useNewUrlParser: true, useUnifiedTopology: true }
         console.log('connected') 
     }); 
 
-app.listen(3000,function(req,res){
+app.listen(PORT,function(req,res){
     console.log("server listening");
 });
 
