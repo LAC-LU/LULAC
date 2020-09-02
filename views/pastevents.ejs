@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=" ">
+
+    <!-- CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/owl.theme.default.min.css" rel="stylesheet">
+    <link href="CSS/loaders.css" rel="stylesheet">
+    <link href="CSS/swiper.min.css" rel="stylesheet">
+    <link href="CSS/animate.min.css" rel="stylesheet">
+    <link href="CSS/icomoon.css" rel="stylesheet">
+    <link href="CSS/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/flaticon.css">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/glider.min.css">
+    <link rel="stylesheet" href="CSS/owl.carousel.min.css">
+  
+    <!-- Main Stylesheet File -->
+    <link href="CSS/style.css" rel="stylesheet">
+    
+    <title>Past Events - LULAC</title>
+  </head>
+  <body>
+      <!-- Top Navigation -->
+
+      <header>
+          <div class="language">
+              <!--<form class="form-inline">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-danger" type="submit">Search</button>
+              </form>-->
+              <p class="lang">Language
+                  <select>
+                      <option value="100x50">English</option>
+                      <option value="200x75">Hindi</option>
+                      <option value="350x150">Urdu</option>
+                  </select>
+              </p>
+          </div>
+          <div class="top-name row">
+              <div class="name col-lg-6 col-md-6 col-sm-12">
+                  <img class="lac-logo" src="Images/lac-logo1.png">
+              </div>
+              <div class="univ col-lg-6 col-md-6 col-sm-12">
+                  <img class="univ-logo" src="Images/univ.png">
+              </div>
+          </div>
+      </header>
+      
+      <nav class="navigation">
+          <div class="container-fluid">
+              <ul class="main-navigation">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="team">Our Team</a></li>
+                  <li><a href="reports">Our Activites</a>
+                      <ul class="sub-navigation">
+                          <li><a href="gallery">Gallery/Visits</a></li>
+                          <li><a href="reports">Annual Reports</a></li>
+                          <li><a href="blog">Blogs</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="upevents">Events</a>
+                      <ul class="sub-navigation">
+                          <li><a href="pastevents">Past Events</a></li>
+                          <li><a href="upevents">Upcoming Events</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="CaseRegistration">Case Registration</a></li>
+                          <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                          <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                          <li><a href="CaseRegistration">Know your rights</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="certi">Verify your certificate</a></li>
+                  <li><a href="contact">Contact us</a></li>
+                  <% if(isAuth===true) { %> 
+                    <li><a class="admin">Admin</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="manageTeam">Manage Team</a></li>
+                          <li><a href="manageGallery">Manage Gallery</a></li>
+                          <li><a href="manageEvents">Manage Events</a></li>
+                          <li><a href="manageBlogs">Manage Blogs</a></li>
+                          <li><a href="manageReports">Manage Reports</a></li>
+                      </ul>
+                  </li>
+                  <% } %>
+              </ul>
+          </div>
+
+          <div class="container-fluid nav-mobile">
+              <div id="dl-menu" class="dl-menuwrapper">
+                  <button class="dl-trigger">Menu</button>
+                  <ul class="dl-menu">
+                      <li><a href="/">Home</a>
+                      <li><a href="team">Our Team</a></li>
+                      <li><a href="reports">Our Activities</a>
+                          <ul class="dl-submenu">
+                              <li><a href="gallery">Gallery/Visits</a></li>
+                              <li><a href="reports">Annual Report</a></li>
+                              <li><a href="blog">Blogs</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="upevents">Events</a>
+                          <ul class="dl-submenu">
+                              <li><a href="pastevents">Past Events</a></li>
+                              <li><a href="upevents">Upcoming Events</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                          <ul class="dl-submenu">
+                              <li><a href="CaseRegistration">Case Registration</a></li>
+                              <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                              <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                              <li><a href="CaseRegistration">Know your rights</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="certi">Verify your certificate</a></li>
+                      <li><a href="contact">Contact Us</a></li>
+                      <% if(isAuth===true) { %> 
+                        <li><a class="admin">Admin</a>
+                          <ul class="sub-navigation01">
+                              <li><a href="manageTeam">Manage Team</a></li>
+                              <li><a href="manageGallery">Manage Gallery</a></li>
+                              <li><a href="manageEvents">Manage Events</a></li>
+                              <li><a href="manageBlogs">Manage Blogs</a></li>
+                              <li><a href="manageReports">Manage Reports</a></li>
+                          </ul>
+                      </li>
+                      <% } %>
+                  </ul>
+               </div>
+          </div>
+      </nav>
+
+                     <!-- Cover --> 
+   
+      <div class="co-wrapper main-other" style="background:url('Images/event2.jpg')">
+          <div class="text-co text-white align-items-center justify-content-center">
+              <div class="about-txt pl-3 pr-3 pb-4">
+                  <h1 class="about text-center">Past Events</h1>
+                  <hr class="mb-4">
+                  <h5 class="mb-3">Truth Never Damages a Cause That is Just</h5>
+                  <h5>~Mahatma Gandhi</h5>
+              </div>  
+              <h5><a class="home-link" href="/"><span>Home</span></a> > <a class="other-link" href=""><span>Past Events</span></a></h5>
+          </div>
+      </div>
+   
+   
+            <!--latest events section-->
+  
+	  	<section class="events">
+          <div class="container text-center">
+              
+			  <div class="text-center pt-4 display-3">
+          		<h1>Latest<span> Events</span> </h1>
+				<hr>
+              </div>
+             	  
+              <div class="row">
+                <% recent.forEach(function(item){ %>
+                    <div class="col-md-4 d-flex">
+                        <div class="blog-entry text-center">
+                            <img src="Images/event-1.jpg">
+                            <div class="text d-block text-center">
+                                <div class="meta mb-3">
+                                    <div><a href=""><%= (item.date).toString().slice(4,15) %></a></div>
+                                </div>
+                                <h4 class="heading mb-4 text-center"><a><%= item.title %></a></h4>
+                                <p class="time-loc"><span class="mr-2"><i class="fa fa-clock-o"></i><%= item.time %></span> <span><i class="fa fa-map-o"></i>Kamalpur</span></p>
+                                <p class="text-justify"><%= item.description%></p>
+                                <ul style="list-style-type: none;">
+                                    <li id="result-text"><i class="fa fa-check-circle-o"></i><%= item.winner %> emerged as the winner.</li>
+                                    <li id="result-text"><i class="fa fa-check-circle-o"></i> <%= item.runner %> being the runner-up.</li>
+                                </ul>
+                                <p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+                  <div class="col-md-4 d-flex">
+                      <div class="blog-entry text-center">
+                          <img src="Images/event-1.jpg">
+                          <div class="text d-block text-center">
+                              <div class="meta mb-3">
+                                  <div><a href="">30 June, 2020</a></div>
+                              </div>
+                              <h3 class="heading mb-4 text-center"><a href="">1st Online Elocution Competition</a></h3>
+                              <p class="time-loc"><span class="mr-2"><i class="fa fa-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="fa fa-map-o"></i>Kamalpur</span></p>
+                              <p class="text-justify">Legal Aid Centre, Faculty of Law, University of Lucknow       	  organized first online Elocution Competition where elocution    	 is an art of speech and conveying and expressive messages to 	 the people. The themes consist of
+							  	 "COVID-19 & Access to Justice",
+							  	 "Tele-Law Scheme and COVID-19 lockdown",
+							  	 "Acess to justice Role of Legal Services Institution",
+							  	 "Legal service authoroties& justice amid covid-19",
+							   	 "Free legal aid challenges and solutions".</p>
+                              <p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 d-flex">
+                      <div class="blog-entry text-center">
+                          <img src="Images/latevent2.jpg">
+                          <div class="text d-block text-center">
+                              <div class="meta mb-3">
+                                  <div><a href="">2020</a></div>
+                              </div>
+                              <h3 class="heading mb-4 text-center"><a href="">Rhetorica Quarterly issue</a></h3>
+                              <p class="time-loc"><span class="mr-2"><i class="fa fa-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="fa fa-map-o"></i>Kamalpur</span></p>
+                              <p class="text-justify">Rhetorica Quarterly issue- I Literacy Journey of Arts Published by the Department of English and Modern English Languages.</p>
+                              <p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 d-flex">
+                      <div class="blog-entry text-center">
+                          <img src="Images/latevent.jpg">
+                          <div class="text d-block text-center">
+                              <div class="meta mb-3">
+                                  <div><a href="">July 1,
+									2020</a></div>
+                              </div>
+                              <h3 class="heading mb-4 text-center"><a href="">Legal awareness camp</a></h3>
+                              <p class="time-loc"><span class="mr-2"><i class="fa fa-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="fa fa-map-o"></i>Kamalpur</span></p>
+                              <p class="text-justify">Grand opening of Panchvati vatika and Aushadiye Vatika in University of Lucknow on the occasion of Van Matosav(1st july to 7th july 2020).</p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+	<!---end latest event section-->
+	
+	<!---past events section-->
+	
+      <div class="container pb-5">
+        <div class="text-center display-3">
+          <h1>Past<span> Events</span> </h1>
+          <hr>
+          </div>
+        <div class="owl-carousel">
+            <% events.forEach(function(event){ %>
+                <div class="row event-item">
+                    <div class="col-lg-6">
+                      <img src="data:image/<%=event.img.contentType%>;base64, 
+                      <%=event.img.data.toString('base64')%>" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                      <h3 class="text-center"><%= event.title %></h3>
+                      <div class="price">
+                        <p><span><%= (event.date).toString().slice(4,15) %></span></p>
+                      </div>
+                      <p class="text-justify"><%= event.description %></p>
+                      <ul>
+                        <li><i class="fa fa-check-circle-o"></i><%= event.winner %> emerged as the winner.</li>
+                        <li><i class="fa fa-check-circle-o"></i><%= event.runner %> being the runner-up.</li>
+                      </ul>
+                    </div>
+                  </div>
+            <% }) %>
+          <div class="row event-item">
+            <div class="col-lg-6">
+              <img src="Images/debate.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content">
+              <h3 class="text-center">One Candidate One constituency</h3>
+              <div class="price">
+                <p><span>April 1,2019</span></p>
+              </div>
+              <p class="text-justify">
+               Legal Aid Centre, Faculty of Law, University of Lucknow organized a debate competition on the topic One Candidate One Constituency on April 1, 2019 that attracted more than 50 participants to the debate who shared their views in favor and against on the topic with majority of the participants from the 'favor' criteria which mainly focused on the injustice people suffer during the One Candidate Two Constituency rule while participants opposite of the bench naturally blamed the people only for their sufferings.
+              </p>
+              <ul>
+                <li><i class="fa fa-check-circle-o"></i> Anadi Tewari (1st year, LL.B [Hons.]) emerged as the winner.</li>
+                <li><i class="fa fa-check-circle-o"></i> Pallavi (3rd year, LL.B [Hons.]) being the runner-up.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row event-item">
+            <div class="col-lg-6">
+              <img src="Images/plantr.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content">
+              <h3 class="text-center">Plant Tree,Plant Hope</h3>
+              <div class="price">
+                <p><span>Sep 10,2018</span></p>
+              </div>
+              <p class="text-justify">
+               Legal Aid Centre, Faculty of Law, University of Lucknow has initiated with the tree plantation drive in joint effort with the 'Go Green Save Earth Foundation'. The faculty teachers along with the students, part of the Legal Aid Centre planted trees and took an initiative towards green earth. The Centre also distributed plants to the faculty teachers and also to the employees. Voice towards 'Green Earth' was initiated by the Scholars.
+              </p>         
+            </div>
+          </div>
+        </div>
+      </div>
+	<!-- End past Events Section -->
+		
+		<!-- Footer -->
+                   
+
+    <footer class="ftco-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>The Legal Aid Centre, University of Lucknow, Lucknow has been very active with motto:<br>'Free and Equal Access to Justice for All'.</p>
+                    <ul class="ftco-footer-social">
+                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="https://www.facebook.com/lulegalaidclinic/"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <h2>Have a Question?</h2>
+                    <ul>
+                        <li><span class="fa fa-map-marker"></span><span class="text">Faculty of Law, University of Lucknow, Jankipuram, Lucknow, Uttar Pradesh, INDIA</span></li>
+                        <li><a href="#"><span class="fa fa-phone"></span><span class="text">7991200596</span></a></li>
+                        <li><a href="#"><span class="fa fa-envelope"></span><span class="text">vidhiksewalu@gmail.com </span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="copyright">  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Legal Aid Centre, University of Lucknow </p>
+            </div>
+        </div>
+    </footer>
+  
+        <!-- loader -->
+   
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+      <!-- The End! -->
+       
+      
+        <!-- Optional JavaScript -->
+
+   <script src="lib/jquery/jquery.min.js"></script>
+   <script src="lib/jquery.easing/jquery.easing.min.js"></script>
+   <script src="js/modernizr.custom.js"></script>
+   <script src="lib/jquery/jquery.dlmenu.js"></script>
+   <script src="lib/counterup/jquery.waypoints.min.js"></script>
+   <script src="lib/counterup/jquery.counterup.js"></script>
+   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
+   <script src="lib/venobox/venobox.min.js"></script>
+   <script src="lib/owl.carousel/owl.carousel.min.js"></script>
+   <script src="js/wow.js"></script>
+   <script src="js/swiper.min.js"></script>
+   <script src="js/scrollPosStyler.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/glider.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script> 
+   <script> 
+       $('.owl-carousel').owlCarousel({ 
+           loop:true,           
+           autoplay: true,   
+           autoplayTimeout: 2000, //2000=2s 
+           margin:10,      
+           responsive:{ 
+               0:{   
+                   items:1 
+               },   
+               600:{       
+                   items:1   
+               },       
+               1000:{ 
+                   items:1
+               }           
+           }           
+       })       
+   </script>
+  
+  </body>
+</html>

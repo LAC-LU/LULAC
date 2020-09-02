@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=" ">
+
+    <!-- CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/loaders.css" rel="stylesheet">
+    <link href="CSS/swiper.min.css" rel="stylesheet">
+    <link href="CSS/animate.min.css" rel="stylesheet">
+    <link href="CSS/icomoon.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/aos.css">
+    <link href="CSS/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/flaticon.css">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/glider.min.css">
+    
+    <!-- Main Stylesheet File -->
+    <link href="CSS/style.css" rel="stylesheet">
+    
+    <title>Manage Reports - LULAC</title>
+  </head>
+  <body>
+      <!-- Top Navigation -->
+
+      <header>
+          <div class="language">
+              <p class="lang">Language
+                  <select>
+                      <option value="100x50">English</option>
+                      <option value="200x75">Hindi</option>
+                      <option value="350x150">Urdu</option>
+                  </select>
+              </p>
+          </div>
+          <div class="top-name row">
+              <div class="name col-lg-6 col-md-6 col-sm-12">
+                  <img class="lac-logo" src="Images/lac-logo1.png">
+              </div>
+              <div class="univ col-lg-6 col-md-6 col-sm-12">
+                  <img class="univ-logo" src="Images/univ.png">
+              </div>
+          </div>
+      </header>
+      
+      <nav class="navigation">
+          <div class="container-fluid">
+              <ul class="main-navigation">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="team">Our Team</a></li>
+                  <li><a href="reports">Our Activites</a>
+                      <ul class="sub-navigation">
+                          <li><a href="gallery">Gallery/Visits</a></li>
+                          <li><a href="reports">Annual Reports</a></li>
+                          <li><a href="blog">Blogs</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="upevents">Events</a>
+                      <ul class="sub-navigation">
+                          <li><a href="pastevents">Past Events</a></li>
+                          <li><a href="upevents">Upcoming Events</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="CaseRegistration">Case Registration</a></li>
+                          <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                          <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                          <li><a href="CaseRegistration">Know your rights</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="certi">Verify your certificate</a></li>
+                  <li><a href="contact">Contact us</a></li>
+                  <% if(isAuth===true) { %> 
+                    <li><a class="admin">Admin</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="manageTeam">Manage Team</a></li>
+                          <li><a href="manageGallery">Manage Gallery</a></li>
+                          <li><a href="manageEvents">Manage Events</a></li>
+                          <li><a href="manageBlogs">Manage Blogs</a></li>
+                          <li><a href="manageReports">Manage Reports</a></li>
+                      </ul>
+                  </li>
+                  <% } %>
+              </ul>
+          </div>
+
+          <div class="container-fluid nav-mobile">
+              <div id="dl-menu" class="dl-menuwrapper">
+                  <button class="dl-trigger">Menu</button>
+                  <ul class="dl-menu">
+                      <li><a href="/">Home</a>
+                      <li><a href="team">Our Team</a></li>
+                      <li><a href="reports">Our Activities</a>
+                          <ul class="dl-submenu">
+                              <li><a href="gallery">Gallery/Visits</a></li>
+                              <li><a href="reports">Annual Report</a></li>
+                              <li><a href="blog">Blogs</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="upevents">Events</a>
+                          <ul class="dl-submenu">
+                              <li><a href="pastevents">Past Events</a></li>
+                              <li><a href="upevents">Upcoming Events</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                          <ul class="dl-submenu">
+                              <li><a href="CaseRegistration">Case Registration</a></li>
+                              <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                              <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                              <li><a href="CaseRegistration">Know your rights</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="certi">Verify your certificate</a></li>
+                      <li><a href="contact">Contact Us</a></li>
+                      <% if(isAuth===true) { %> 
+                        <li><a class="admin">Admin</a>
+                          <ul class="sub-navigation01">
+                              <li><a href="manageTeam">Manage Team</a></li>
+                              <li><a href="manageGallery">Manage Gallery</a></li>
+                              <li><a href="manageEvents">Manage Events</a></li>
+                              <li><a href="manageBlogs">Manage Blogs</a></li>
+                              <li><a href="manageReports">Manage Reports</a></li>
+                          </ul>
+                      </li>
+                      <% } %>
+                  </ul>
+               </div>
+          </div>
+      </nav>
+      <img class="img-center" src="Images\report.png" alt="pic"/>
+      <div class="text-center display-3">
+      <h1>Manage <span>Reports</span></h1>
+      </div>
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Action</th>
+          </tr>
+          <% if (reports.length > 0){ %> 
+          <% reports.forEach(function(report){ %>
+              <tr>
+                  <td><%= report.title %></td>
+                  <td>
+                      <form class="formmanage"method="POST" action=<%= "/manageReports/deleteReport/" + report._id %>>
+                          <button>Delete</button>
+                      </form>
+                  </td>
+              </tr>
+          <% }) %>
+          <% } else { %>
+              <tr>
+              <td colspan="3">No reports found</td>
+              </tr>
+          <% } %>
+        </table>
+        <div class="text-center display-3">
+            <h1>Add New <span>Report</span></h1>
+        </div>
+      <section class="contact">
+        <div class="container text-centre">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="text" placeholder="Title" name="title" required></textarea>
+            <input type="file" name="pdf" required/>
+            <input type="submit" value="Save">
+        </form>
+        </div>
+        </section>
+<footer class="ftco-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>The Legal Aid Centre, University of Lucknow, Lucknow has been very active with motto 'free and equal access to justice for all'.</p>
+                    <ul class="ftco-footer-social">
+                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="https://www.facebook.com/lulegalaidclinic/"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                    <h2>Have a Question?</h2>
+                    <ul>
+                        <li><span class="fa fa-map-marker"></span><span class="text">Faculty of Law, University of Lucknow, Jankipuram, Lucknow, Uttar Pradesh, INDIA</span></li>
+                        <li><a href="#"><span class="fa fa-phone"></span><span class="text">7991200596</span></a></li>
+                        <li><a href="#"><span class="fa fa-envelope"></span><span class="text">vidhiksewalu@gmail.com </span></a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p class="copyright">  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Legal Aid Centre, University of Lucknow </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- loader -->
+  
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- The End! -->
+   
+  
+<!-- Optional JavaScript -->
+
+<script src="js/popper.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="lib/jquery/jquery.dlmenu.js"></script>
+<script src="lib/counterup/jquery.waypoints.min.js"></script>
+<script src="lib/counterup/jquery.counterup.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/scrollPosStyler.js"></script>
+<script src="js/main.js"></script>
+<script src="js/glider.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="js/google-map.js"></script>
+<script>
+// Decode Base64 to binary and show some information about the PDF file (note that I skipped all checks)
+var bin = atob(b64);
+console.log('File Size:', Math.round(bin.length / 1024), 'KB');
+console.log('PDF Version:', bin.match(/^.PDF-([0-9.]+)/)[1]);
+console.log('Create Date:', bin.match(/<xmp:CreateDate>(.+?)<\/xmp:CreateDate>/)[1]);
+console.log('Modify Date:', bin.match(/<xmp:ModifyDate>(.+?)<\/xmp:ModifyDate>/)[1]);
+console.log('Creator Tool:', bin.match(/<xmp:CreatorTool>(.+?)<\/xmp:CreatorTool>/)[1]);
+
+// Embed the PDF into the HTML page and show it to the user
+var obj = document.createElement('object');
+obj.style.width = '100%';
+obj.style.height = '842pt';
+obj.type = 'application/pdf';
+obj.data = 'data:application/pdf;base64,' + b64;
+document.body.appendChild(obj);
+
+// Insert a link that allows the user to download the PDF file
+var link = document.createElement('a');
+link.innerHTML = 'Download PDF file';
+link.download = 'file.pdf';
+link.href = 'data:application/octet-stream;base64,' + b64;
+document.body.appendChild(link);
+    </script>
+</script>
+</body>
+</html>

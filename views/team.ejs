@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=" ">
+
+    <!-- CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/loaders.css" rel="stylesheet">
+    <link href="CSS/swiper.min.css" rel="stylesheet">
+    <link href="CSS/animate.min.css" rel="stylesheet">
+    <link href="CSS/icomoon.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/aos.css">
+    <link href="CSS/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/flaticon.css">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/glider.min.css">
+    
+    <!-- Main Stylesheet File -->
+    <link href="CSS/style.css" rel="stylesheet">
+    
+    <title>Team - LULAC</title>
+  </head>
+  <body>
+      <!-- Top Navigation -->
+
+      <header>
+          <div class="language">
+              <p class="lang">Language
+                  <select>
+                      <option value="100x50">English</option>
+                      <option value="200x75">Hindi</option>
+                      <option value="350x150">Urdu</option>
+                  </select>
+              </p>
+          </div>
+          <div class="top-name row">
+              <div class="name align-items-center justify-content-center col-lg-6 col-md-6 col-sm-12">
+                  <img class="lac-logo" src="Images/lac-logo1.png">
+              </div>
+              <div class="univ col-lg-6 col-md-6 col-sm-12">
+                  <img class="univ-logo" src="Images/univ.png">
+              </div>
+          </div>
+      </header>
+      
+      <nav class="navigation">
+          <div class="container-fluid">
+              <ul class="main-navigation">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="team">Our Team</a></li>
+                  <li><a href="reports">Our Activites</a>
+                      <ul class="sub-navigation">
+                          <li><a href="gallery">Gallery/Visits</a></li>
+                          <li><a href="reports">Annual Reports</a></li>
+                          <li><a href="blog">Blogs</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="upevents">Events</a>
+                      <ul class="sub-navigation">
+                          <li><a href="pastevents">Past Events</a></li>
+                          <li><a href="upevents">Upcoming Events</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="CaseRegistration">Case Registration</a></li>
+                          <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                          <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                          <li><a href="CaseRegistration">Know your rights</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="certi">Verify your certificate</a></li>
+                  <li><a href="contact">Contact us</a></li>
+                  <% if(isAuth===true) { %> 
+                    <li><a class="admin">Admin</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="manageTeam">Manage Team</a></li>
+                          <li><a href="manageGallery">Manage Gallery</a></li>
+                          <li><a href="manageEvents">Manage Events</a></li>
+                          <li><a href="manageBlogs">Manage Blogs</a></li>
+                          <li><a href="manageReports">Manage Reports</a></li>
+                      </ul>
+                  </li>
+                  <% } %>
+              </ul>
+          </div>
+
+          <div class="container-fluid nav-mobile">
+              <div id="dl-menu" class="dl-menuwrapper">
+                  <button class="dl-trigger">Menu</button>
+                  <ul class="dl-menu">
+                      <li><a href="/">Home</a>
+                      <li><a href="team">Our Team</a></li>
+                      <li><a href="reports">Our Activities</a>
+                          <ul class="dl-submenu">
+                              <li><a href="gallery">Gallery/Visits</a></li>
+                              <li><a href="reports">Annual Report</a></li>
+                              <li><a href="blog">Blogs</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="upevents">Events</a>
+                          <ul class="dl-submenu">
+                              <li><a href="pastevents">Past Events</a></li>
+                              <li><a href="upevents">Upcoming Events</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                          <ul class="dl-submenu">
+                              <li><a href="CaseRegistration">Case Registration</a></li>
+                              <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                              <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                              <li><a href="CaseRegistration">Know your rights</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="certi">Verify your certificate</a></li>
+                      <li><a href="contact">Contact Us</a></li>
+                      <% if(isAuth===true) { %> 
+                        <li><a class="admin">Admin</a>
+                          <ul class="sub-navigation01">
+                              <li><a href="manageTeam">Manage Team</a></li>
+                              <li><a href="manageGallery">Manage Gallery</a></li>
+                              <li><a href="manageEvents">Manage Events</a></li>
+                              <li><a href="manageBlogs">Manage Blogs</a></li>
+                              <li><a href="manageReports">Manage Reports</a></li>
+                          </ul>
+                      </li>
+                      <% } %>
+                  </ul>
+               </div>
+          </div>
+      </nav>
+
+     <!-- Swiper Silder --> 
+      
+     <!-- Slider main container -->
+      
+      <div class="swiper-container overlay main-slider" id="myCarousel">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/13.png')" data-hash="slide1">   
+              </div>
+              <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/3.jpg')" data-hash="slide1">
+              </div>
+              <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/12.jpg')" data-hash="slide1">
+              </div>
+              <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/2.jpg')" data-hash="slide1">
+              </div>
+              <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/4.jpg')" data-hash="slide1">
+              </div>
+          </div>
+        
+          <!-- Add Pagination -->
+          
+          <div class="swiper-pagination"></div>
+          
+          <!-- Add Navigation -->
+          
+          <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
+          <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
+      </div>
+      
+           <!-- Cover -->
+      
+      <div class="abt-txt">
+          <h1 class="about text-center">Our Team</h1>
+          <hr class="mb-4">
+          <h5 class="pl-3 pr-3 pb-4 abt-head container">Coming Together is a beginning. Staying together is a progress and Working together is a SUCCESS.</h5>
+      </div>
+      
+      <section id="patrons">
+          <h1 class="display-3 mt-5 pt-5 text-center">Our <span>Patrons</span></h1>
+          <hr class="mb-5">
+          <div class="container">
+              <div class="row names text-center">
+                  <div class="col-sm-4 img-left">
+                      <img src="images/photos/VC Prof. Alok .png" alt="" class="rounded-circle   img-circle" />
+                      <b>  VICE CHANCELLOR </b>
+                  </div>
+                  <div class="col-sm-8 desc-right container">
+                      <h4>Prof. ALOK KUMAR RAI</h4>
+                      <p style="font-family: 'Marck Script', cursive; font-family: 'Spectral', serif;">
+                          Prof. Alok Kr. Rai is Professor of Marketing at Institute of Management Studies, Banaras Hindu University and currently Vice-Chancellor of the University of Lucknow where he is spearheading the development of the University’s policies and programs to establish extraordinary standards of education, enrich the experience of learning and reinvigorate the connection between learners and the society.
+                      </p>
+                  </div>
+              </div>
+              <div class="row names text-center">
+                  <div class="col-sm-4 img-left">
+                      <img src="images/Photos/dean.jpg" alt="" class="img-circle  rounded-circle" />
+                      <b> DEAN </b>
+                  </div>
+                  <div class="col-sm-8 desc-right container">
+                      <h4>Prof. C.P. SINGH</h4>
+                      <p style="font-family: 'Marck Script', cursive; font-family: 'Spectral', serif;">
+                          Prof C.P. Singh is the deemed professor and the Dean of Lucknow University. He completed his BAchelor's in Arts from Kanpur University  in 1981 and L.L.M. from Lucknow University in the year 1993. He has been working in the university as associate professor since 2002. He is also known for his significant publication of the book <b>Domestic Violence Against Women In India and Implementation of PWDV Act , 2005 .</b>
+                      </p>
+                  </div>
+              </div>
+              <div class="row names text-center">
+                  <div class="col-sm-4 img-left">
+                      <img src="Images/p2.jpg" alt="" class=" rounded-circle  img-circle" />
+                      <b> CHAIRPERSON </b>
+                  </div>
+                  <div class="col-sm-8 desc-right container">
+                      <h4>Dr. A.K. SRIVASTAVA</h4>
+                      <p style="font-family: 'Marck Script', cursive; font-family: 'Spectral', serif;">
+                          Dr A.K. Srivastava  was Dy.Coordinator of the DSA Programme. He organized Environmental Awareness Programmes, and was Seminar Coordinator in five National Seminars. His publications include Social Class and Family Life in India, Entrepreneurship: Reflections and Investigations (ed.); Modernity, Feminism and Women Empowerment (ed.) and a text book on Social Research and Statistics. He has been the head of the Department (2007-2010) He has been one of the editors of hindi journal, Manav. He visited Thailand for an academic purpose.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+      <div class="container text-center">
+          <h1 class="display-3 mt-5 text-center">Student <span>Members</span></h1>
+      </div>
+      <hr>
+      <div class="container text-center">
+          <h2 class="text-center mb-5"><i><u class="text-warning">Core members</u></i></h2>
+          <div class="row">
+            <% coremember.forEach(function(member) { %>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                        <img src="data:image/<%=member.img.contentType%>;base64, 
+                        <%=member.img.data.toString('base64')%>" alt="" class="img-fluid1">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy text-center">
+                        <h3><%= member.name %></h3>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/akash2ndyear.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy text-center">
+                          <h3>Aakash Sharma</h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12 ">
+                  <div class="row justify-content-center ">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Aman Chaudhary.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3>Aman Chaudhary</h3> 
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center  ">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/photos/dp.png" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Akhileshwar Singh </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/photos/anaditewari.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Anadi Tewari </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Ankit.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Ankit Singh </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Anupam .jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Anupam </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/dp.png" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Devang Dev </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center ">
+                          <img src="images/Photos/dp.png" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Farhan Ansari </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/harshmishra.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                         <h3> Harsh Mishra </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Kavita Bhusan.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Kavita Bhusan </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/dp.png" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Kuldeep Singh </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Manish Tiwari.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Manish Tiwari </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex  justify-content-center">
+                          <img src="images/Photos/dp.png" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Neha </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Nishita Singh.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Nishita Singh </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Ritam Tripathi.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Ritam Tripathi </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/Rohit Kesari.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Rohit kesari </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex  justify-content-center">
+                          <img src="images/Photos/Samridhi Anand.jpg" alt="" class="img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Samriddhi Anand </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/shikhar kumar.jpg" alt="" class="img-fluid1" >
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Shikhar Kumar </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex justify-content-center">
+                          <img src="images/Photos/dp.png" alt="" class=" img-fluid1">
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy text-justify-center">
+                          <h3> Shubhangi Singh </h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div class="row justify-content-center">
+                      <div class="col-lg-4 col-md-4 col-4 d-flex  justify-content-center">
+                          <img src="images/Photos/Sonali Singh.jpg"  alt="" class="img-fluid1" >
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-8 boxy center">
+                          <h3> Sonali Singh </h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="container-fluid pt-3 mb-5">
+              <h1 class="text-center mb-4 mt-5"><i><u class="text-warning">Other members</u></i></h1>
+              <div class="row">
+                  <% othermember.forEach(function(member) { %>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                    <div class="team-card" style="width: 20rem;">
+                        <img class="img-thumbnail" src="data:image/<%=member.img.contentType%>;base64, 
+                        <%=member.img.data.toString('base64')%>" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text"><B> <%= member.name %> </B></p>
+                        </div>
+                    </div>
+                </div> 
+                <% }) %>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/Abhishek Nag.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><B>Abhishek Nag</B></p>
+                          </div>
+                      </div>
+                  </div> 
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/Ayush Pandey.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Ayush Pandey</b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/shashank.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Shashank</b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/Pranav Pandey.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Pranav Pandey</b></p>
+                          </div>
+                      </div></div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/Harshkumarpandey.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Harsh Kumar Pandey</b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/Akshay Gupta.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Akshay Gupta</b></p>
+                          </div>
+                      </div>
+                  </div>  
+              </div>
+              <br><br>
+              <div class="row">
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/Kanchan shakya.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Kanchan Shakya</b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/puneetdeshwal.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Puneet Deshwal </b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/AkshatSharma.jpg" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Akshat Sharma</b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/dp.png" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Anurag Patel</b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/dp.png" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Shailendra Mishra</b></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
+                      <div class="team-card" style="width: 20rem;">
+                          <img class="img-thumbnail" src="images/Photos/dp.png" alt="Card image cap">
+                          <div class="card-body">
+                              <p class="card-text"><b>Himanshi</b></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div> 
+      </div>
+	
+		<!-- Footer -->
+                   
+    <footer class="ftco-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>The Legal Aid Centre, University of Lucknow, Lucknow has been very active with motto:<br>'Free and Equal Access to Justice for All'.</p>
+                    <ul class="ftco-footer-social">
+                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="https://www.facebook.com/lulegalaidclinic/"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <h2>Have a Question?</h2>
+                    <ul>
+                        <li><span class="fa fa-map-marker"></span><span class="text">Faculty of Law, University of Lucknow, Jankipuram, Lucknow, Uttar Pradesh, INDIA</span></li>
+                        <li><a href="#"><span class="fa fa-phone"></span><span class="text">7991200596</span></a></li>
+                        <li><a href="#"><span class="fa fa-envelope"></span><span class="text">vidhiksewalu@gmail.com </span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="copyright">  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Legal Aid Centre, University of Lucknow </p>
+            </div>
+        </div>
+    </footer>
+  
+        <!-- loader -->
+   
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+      <!-- The End! -->
+       
+      
+        <!-- Optional JavaScript -->
+
+   <script src="js/popper.min.js"></script>
+   <script src="js/aos.js"></script>
+   <script src="lib/jquery/jquery.min.js"></script>
+   <script src="js/modernizr.custom.js"></script>
+   <script src="lib/jquery/jquery.dlmenu.js"></script>
+   <script src="lib/counterup/jquery.waypoints.min.js"></script>
+   <script src="lib/counterup/jquery.counterup.js"></script>
+   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+   <script src="js/wow.js"></script>
+   <script src="js/jquery.fancybox.js"></script>
+   <script src="js/swiper.min.js"></script>
+   <script src="js/scrollPosStyler.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/glider.min.js"></script>
+       
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=" ">
+
+    <!-- CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/loaders.css" rel="stylesheet">
+    <link href="CSS/swiper.min.css" rel="stylesheet">
+    <link href="CSS/animate.min.css" rel="stylesheet">
+    <link href="CSS/icomoon.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/aos.css">
+    <link href="CSS/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/flaticon.css">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/glider.min.css">
+    <link rel="stylesheet" href="CSS/owl.carousel.min.css">
+  
+    <!-- Main Stylesheet File -->
+    <link href="CSS/style.css" rel="stylesheet">
+    
+    <title>Home - LULAC</title>
+  </head>
+  <body>
+      <!-- Top Navigation -->
+
+      <header>
+          <div class="language">
+              <p class="lang">Language
+                  <select>
+                      <option value="100x50">English</option>
+                      <option value="200x75">Hindi</option>
+                      <option value="350x150">Urdu</option>
+                  </select>
+              </p>
+          </div>
+          <div class="top-name row">
+              <div class="name align-items-center justify-content-center col-lg-6 col-md-6 col-sm-12">
+                  <img class="lac-logo" src="Images/lac-logo1.png">
+              </div>
+              <div class="univ col-lg-6 col-md-6 col-sm-12">
+                  <img class="univ-logo" src="Images/univ.png">
+              </div>
+          </div>
+      </header>
+      
+      <nav class="navigation">
+          <div class="container-fluid">
+              <ul class="main-navigation">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="team">Our Team</a></li>
+                  <li><a href="reports">Our Activites</a>
+                      <ul class="sub-navigation">
+                          <li><a href="gallery">Gallery/Visits</a></li>
+                          <li><a href="reports">Annual Reports</a></li>
+                          <li><a href="blog">Blogs</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="upevents">Events</a>
+                      <ul class="sub-navigation">
+                          <li><a href="pastevents">Past Events</a></li>
+                          <li><a href="upevents">Upcoming Events</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="CaseRegistration">Case Registration</a></li>
+                          <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                          <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                          <li><a href="CaseRegistration">Know your rights</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="certi">Verify your certificate</a></li>
+                  <li><a href="contact">Contact us</a></li>
+                  <% if(isAuth===true) { %> 
+                  <li><a class="admin">Admin</a>
+                    <ul class="sub-navigation01">
+                        <li><a href="manageTeam">Manage Team</a></li>
+                        <li><a href="manageGallery">Manage Gallery</a></li>
+                        <li><a href="manageEvents">Manage Events</a></li>
+                        <li><a href="manageBlogs">Manage Blogs</a></li>
+                        <li><a href="manageReports">Manage Reports</a></li>
+                    </ul>
+                </li>
+                <% } %>
+              </ul>
+          </div>
+
+          <div class="container-fluid nav-mobile">
+              <div id="dl-menu" class="dl-menuwrapper">
+                  <button class="dl-trigger">Menu</button>
+                  <ul class="dl-menu">
+                      <li><a href="/">Home</a>
+                      <li><a href="team">Our Team</a></li>
+                      <li><a href="reports">Our Activities</a>
+                          <ul class="dl-submenu">
+                              <li><a href="gallery">Gallery/Visits</a></li>
+                              <li><a href="reports">Annual Report</a></li>
+                              <li><a href="blog">Blogs</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="upevents">Events</a>
+                          <ul class="dl-submenu">
+                              <li><a href="pastevents">Past Events</a></li>
+                              <li><a href="upevents">Upcoming Events</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                          <ul class="dl-submenu">
+                              <li><a href="CaseRegistration">Case Registration</a></li>
+                              <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                              <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                              <li><a href="CaseRegistration">Know your rights</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="certi">Verify your certificate</a></li>
+                      <li><a href="contact">Contact Us</a></li>
+                      <% if(isAuth===true) { %> 
+                        <li><a class="admin">Admin</a>
+                          <ul class="sub-navigation01">
+                              <li><a href="manageTeam">Manage Team</a></li>
+                              <li><a href="manageGallery">Manage Gallery</a></li>
+                              <li><a href="manageEvents">Manage Events</a></li>
+                              <li><a href="manageBlogs">Manage Blogs</a></li>
+                              <li><a href="manageReports">Manage Reports</a></li>
+                          </ul>
+                      </li>
+                      <% } %>
+                  </ul>
+               </div>
+          </div>
+      </nav>
+
+    <!-- Swiper Silder --> 
+      
+    <!-- Slider main container -->
+    
+    <div class="swiper-container overlay main-slider" id="myCarousel">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/slide-1.jpg')" data-hash="slide1">
+                  
+            </div>
+            <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/3.jpg')" data-hash="slide1">
+                  
+            </div>
+            <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/16.png')" data-hash="slide1">
+                  
+            </div>
+            <div class="swiper-slide slider-bg-position text-white sliding-img" style="background:url('Images/15.png')" data-hash="slide1">
+                  
+            </div>
+        </div>
+        
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- Add Navigation -->
+        <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
+        <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
+    </div>
+    <div class="abt-txt">
+        <h1 class="about text-center">LULAC</h1>
+        <hr class="mb-4">
+        <h3 class="pl-4 pr-4 pb-5 abt-head container">Free and Equal Access to Justice for All</h3>
+    </div>
+      
+                            <!-- About Free Legal Aid -->
+
+    <section id="about pt-5">
+        <div class="container">
+            <h2 class="display-3 mt-5 pt-5 text-center">What Is <span class="text-warning">Free Legal Aid</span></h2>
+            <hr class="mb-4">
+            <div class="container-fluid container">
+                <div class="row">
+                    <p class="pt-4 pl-3 pr-3 text-justify"> Law is a set of rules decided by a particular state meant for the purpose of keeping the peace and security of society.<br>Courts or police may enforce this system of rules and punish people who break the laws, such as by paying a fine, or other penalty including jail. In ancient societies, laws were written by leaders, to set out rules on how people can live, work and do business with each other. <br>But many times in history when laws have been on a false basis to benefit few at the expense of society, they have resulted in conflict. To prevent this, in most countries today, laws are written and voted on by groups of politicians in a legislature, such as a parliament or congress, elected (chosen) by the governed peoples.<br>Countries today have a constitution for the overall framework of society and make further laws as needed for matters of detail. Members of society generally have enough freedom within all the legal things they can choose to do. An activity is illegal if it breaks a law or does not follow the laws. </p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+                     <!-- About LULAC --> 
+   
+      <section>
+          <div class="container-fluid container">
+              <h1 class="text-center display-3">About <span>LULAC</span></h1>
+              <hr class="mb-4">
+              <div class="row">
+                  <div class="col-lg-8 col-md-8 col-12">
+                      <p class="pt-4 pr-3 pl-3 text-justify"> Law is a set of rules decided by a particular state meant for the purpose of keeping the peace and security of society.<br>Courts or police may enforce this system of rules and punish people who break the laws, such as by paying a fine, or other penalty including jail. In ancient societies, laws were written by leaders, to set out rules on how people can live, work and do business with each other.<br>But many times in history when laws have been on a false basis to benefit few at the expense of society, they have resulted in conflict. To prevent this, in most countries today, laws are written and voted on by groups of politicians in a legislature, such as a parliament or congress, elected (chosen) by the governed peoples. <br>Countries today have a constitution for the overall framework of society and make further laws as needed for matters of detail. Members of society generally have enough freedom within all the legal things they can choose to do. An activity is illegal if it breaks a law or does not follow the laws. </p>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-12">
+                      <img src="Images\1.jpg" class= "lac-infra img-fluid pt-5 pr-3 pl-3 pb-3">
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+        <!-- Counters -->
+      
+    <div class="section-counter container">
+        <section id="served">
+            <div class="row">
+                <div class="col-sm-4 col-lg-4">
+                    <div class="counter-box pt-4 pt-md-0">
+                        <div class="counter-ico">
+                            <span class="ico-circle"><i class="ion-briefcase"></i></span>
+                        </div>
+                        <div class="counter-num">
+                            <p class="counter">100</p>
+                            <span class="counter-text">Cases filed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-lg-4">
+                    <div class="counter-box pt-4 pt-md-0">
+                        <div class="counter-ico">
+                            <span class="ico-circle"><i class="ion-ios-people"></i></span>
+                        </div>
+                        <div class="counter-num">
+                            <p class="counter">1000</p>
+                            <span class="counter-text">People served</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-lg-4">
+                    <div class="counter-box pt-4 pt-md-0">
+                        <div class="counter-ico">
+                            <span class="ico-circle"><i class="ion-aperture"></i></span>
+                        </div>
+                        <div class="counter-num">
+                            <p class="counter">50</p>
+                            <span class="counter-text">Events</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      </div>
+
+           <!-- Causes -->
+
+        <section>
+            <h1 class="text-center display-3">Our <span>Causes</span></h1>
+            <hr>
+            <div class="container owl-carousel">
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c1.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c2.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c3.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c4.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c5.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c6.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c7.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c8.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c9.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="card"> 
+                    <div class="img">
+                        <img src="Images/c10.jpg">
+                    </div> 
+                    <div class="content"> 
+                        <div class="card-title">Brian Towa</div> 
+                        <div class="card-subtitle">Crime Control</div> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut assumenda cumque et, distinctio optio totam, repudiandae ducimus sit aut quibusdam fugiat alias quisqum</p>
+                        <div class="btn">                   
+                            <button>Read more</button>
+                        </div> 
+                    </div>   
+                </div>
+            </div>
+        </section>
+  
+          <!-- Patrons -->
+      
+      <section class="patrons">
+          <div class="team text-center pb-5">
+              <h1 class="display-3 pt-5 text-center">Our <span>Patrons</span></h1>
+              <hr class="mb-5">
+              <div class="row headline justify-content-center">
+                  <p>Teamwork begins by building trust. And the only way to do that is to overcome our need for invulnerability.</p>
+              </div>
+              <div class="row team-container">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="card staff-card">
+                        <img src="Images/p3.png" class="staff-img">
+                        <div class="staff-card-body">
+                            <div class="info">
+                                <h3><a href="teacher-single">Prof. Alok Kr. Rai</a></h3>
+                                <span class="position">Vice Chancellor</span>
+                                <div class="text">
+                                    <p> <a href="http://www.lkouniv.ac.in/">University Of Lucknow</a></p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                    <div class="card staff-card">
+                        <img src="Images/p1.jpg" class="staff-img">
+                        <div class="staff-card-body">
+                            <div class="info">
+                                <h3><a href="teacher-single">Prof. C P Singh</a></h3>
+                                <span class="position">Dean, Faculty Of Law</span>
+                                <div class="text">
+                                    <p> <a href="http://www.lkouniv.ac.in/">University Of Lucknow</a></p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                    <div class="card staff-card">
+                        <img src="Images/p2.jpg" class="staff-img">
+                        <div class="staff-card-body">
+                            <div class="info">
+                                <h3><a href="teacher-single"> Dr. A K Srivastava</a></h3>
+                                <span class="position">Chairman of LULAC</span>
+                                <div class="text">
+                                    <p> <a href="http://www.lkouniv.ac.in/">University Of Lucknow</a></p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+       <!-- Services -->
+      
+    <section id="services" class="mb-5">
+        <div class="container text-center">
+            <h1 class="display-3 mt-5">What We <span>Do?</span></h1>
+            <hr class="mb-4">
+            <div class="row mb-5">
+                  <p class="pt-4 text-justify pl-3 pr-3"> Law is a set of rules decided by a particular state meant for the purpose of keeping the peace and security of society.<br>Courts or police may enforce this system of rules and punish people who break the laws, such as by paying a fine, or other penalty including jail. In ancient societies, laws were written by leaders, to set out rules on how people can live, work and do business with each other.<br>But many times in history when laws have been on a false basis to benefit few at the expense of society, they have resulted in conflict. To prevent this, in most countries today, laws are written and voted on by groups of politicians in a legislature, such as a parliament or congress, elected (chosen) by the governed peoples.<br>Countries today have a constitution for the overall framework of society and make further laws as needed for matters of detail. Members of society generally have enough freedom within all the legal things they can choose to do. An activity is illegal if it breaks a law or does not follow the laws. </p>
+              </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Images/c1.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Free Case filing</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <a href="CaseRegistration" class="btn btn-outline-danger">Case Registration</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Images/c5.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Legal Rights Info</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <a href="contact" class="btn btn-outline-danger">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="Images/c8.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Organizing Events</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <a href="UpcomingEvents" class="btn btn-outline-danger">See More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+    
+		
+		<!-- Footer -->
+                   
+
+    <footer class="ftco-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>The Legal Aid Centre, University of Lucknow, Lucknow has been very active with motto:<br>'Free and Equal Access to Justice for All'.</p>
+                    <ul class="ftco-footer-social">
+                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="https://www.facebook.com/lulegalaidclinic/"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-lg-2 col-sm-12">
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                    <h2>Have a Question?</h2>
+                    <ul>
+                        <li><span class="fa fa-map-marker"></span><span class="text">Faculty of Law, University of Lucknow, Jankipuram, Lucknow, Uttar Pradesh, INDIA</span></li>
+                        <li><a href="#"><span class="fa fa-phone"></span><span class="text">7991200596</span></a></li>
+                        <li><a href="#"><span class="fa fa-envelope"></span><span class="text">vidhiksewalu@gmail.com </span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="copyright">  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Legal Aid Centre, University of Lucknow </p>
+            </div>
+        </div>
+    </footer>
+  
+        <!-- loader -->
+   
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+      <!-- The End! -->
+       
+      
+        <!-- Optional JavaScript -->
+
+   <script src="js/popper.min.js"></script>
+   <script src="js/aos.js"></script>
+   <script src="lib/jquery/jquery.min.js"></script>
+   <script src="js/modernizr.custom.js"></script>
+   <script src="lib/jquery/jquery.dlmenu.js"></script>
+   <script src="lib/counterup/jquery.waypoints.min.js"></script>
+   <script src="lib/counterup/jquery.counterup.js"></script>
+   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+   <script src="js/wow.js"></script>
+   <script src="js/jquery.fancybox.js"></script>
+   <script src="js/swiper.min.js"></script>
+   <script src="js/scrollPosStyler.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/glider.min.js"></script>
+   <script src="js/owl.carousel.min.js"></script> 
+   <script> 
+       $('.owl-carousel').owlCarousel({ 
+           loop:true,           
+           autoplay: true,   
+           autoplayTimeout: 2000, //2000=2s 
+           margin:10,      
+           responsive:{ 
+               0:{   
+                   items:1 
+               },   
+               600:{       
+                   items:3   
+               },       
+               1000:{ 
+                   items:4
+               }           
+           }           
+       })       
+   </script>
+  
+  </body>
+</html>
