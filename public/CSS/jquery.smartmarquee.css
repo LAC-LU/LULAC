@@ -1,0 +1,12 @@
+
+.smartmarquee {
+	position: relative;
+	overflow: hidden;
+	height: 145px;
+	background-color:#e2e2e2;
+}
+.smartmarquee .notice_board_bg {
+	position: absolute;
+	  width: 100%;
+}
+

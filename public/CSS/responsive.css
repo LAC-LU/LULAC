@@ -1,0 +1,78 @@
+/* ChariteMax - HTML Template */
+
+@media only screen and (max-width: 1800px) {
+	.main-slider .slider-wrapper .image img {
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+	.page-wrapper {
+		overflow: hidden;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.page-wrapper {
+		margin-bottom: 0px !important;
+	}
+	.fact-counter .inner-box {
+		margin-left: 100px;
+		margin-bottom: 30px;
+	}
+	.main-header.style-two .header-upper {
+	    padding: 0px;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.image-block-one {
+		margin-bottom: 50px;
+	}
+	.image-block-one .big-image img {
+		float: left;
+		right: 0;
+	}
+	.image-block-one .small-image {
+		right: 5px;
+	}
+	.main-footer .services-widget {
+		padding-left: 0px;
+	}
+	.main-footer .posts-widget {
+		padding-right: : 0px;
+		margin-left: 0px;
+	}
+	.header-top .outer-box {
+		justify-content: center;
+	}
+	.event-section .image-block-one .big-image img {
+		right: 0px;
+	}
+	.header-upper.style-two .main-menu .navigation>li {
+		
+	}
+	.main-header.style-two {
+	    position: relative;
+	    background: #222;
+	}
+	.main-header.style-two .logo-outer {
+	    padding: 15px 0 15px;
+	    background-color: #2a2a2a;
+	    margin-bottom: 10px;
+	}
+
+}
+
+@media only screen and (max-width: 599px) {
+	.main-slider h1 {
+		font-size: 48px;
+		line-height: 50px;
+	}
+	.fact-counter .inner-box {
+	    max-width: 260px;
+	    margin: 0 auto;
+	    margin-bottom: 30px;
+	}
+}
+
