@@ -179,11 +179,12 @@
                                 <h4 class="heading mb-4 text-center"><a><%= item.title %></a></h4>
                                 <p class="time-loc"><span class="mr-2"><i class="fa fa-clock-o"></i><%= item.time %></span> <span><i class="fa fa-map-o"></i>Kamalpur</span></p>
                                 <p class="text-justify"><%= item.description%></p>
+                                <% if(item.winner!=="" && item.runner!==""){ %> 
                                 <ul style="list-style-type: none;">
                                     <li id="result-text"><i class="fa fa-check-circle-o"></i><%= item.winner %> emerged as the winner.</li>
                                     <li id="result-text"><i class="fa fa-check-circle-o"></i> <%= item.runner %> being the runner-up.</li>
                                 </ul>
-                                <p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a></p>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -203,7 +204,6 @@
 							  	 "Acess to justice Role of Legal Services Institution",
 							  	 "Legal service authoroties& justice amid covid-19",
 							   	 "Free legal aid challenges and solutions".</p>
-                              <p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a></p>
                           </div>
                       </div>
                   </div>
@@ -217,7 +217,6 @@
                               <h3 class="heading mb-4 text-center"><a href="">Rhetorica Quarterly issue</a></h3>
                               <p class="time-loc"><span class="mr-2"><i class="fa fa-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="fa fa-map-o"></i>Kamalpur</span></p>
                               <p class="text-justify">Rhetorica Quarterly issue- I Literacy Journey of Arts Published by the Department of English and Modern English Languages.</p>
-                              <p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a></p>
                           </div>
                       </div>
                   </div>
@@ -231,7 +230,7 @@
                               </div>
                               <h3 class="heading mb-4 text-center"><a href="">Legal awareness camp</a></h3>
                               <p class="time-loc"><span class="mr-2"><i class="fa fa-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="fa fa-map-o"></i>Kamalpur</span></p>
-                              <p class="text-justify">Grand opening of Panchvati vatika and Aushadiye Vatika in University of Lucknow on the occasion of Van Matosav(1st july to 7th july 2020).</p><a href=""> Know More -<i class="ion-ios-arrow-forward"></i></a>
+                              <p class="text-justify">Grand opening of Panchvati vatika and Aushadiye Vatika in University of Lucknow on the occasion of Van Matosav(1st july to 7th july 2020).</p>
                           </div>
                       </div>
                   </div>
@@ -261,10 +260,12 @@
                         <p><span><%= (event.date).toString().slice(4,15) %></span></p>
                       </div>
                       <p class="text-justify"><%= event.description %></p>
+                      <% if(event.winner!== "" && event.runner!== ""){ %> 
                       <ul>
                         <li><i class="fa fa-check-circle-o"></i><%= event.winner %> emerged as the winner.</li>
                         <li><i class="fa fa-check-circle-o"></i><%= event.runner %> being the runner-up.</li>
-                      </ul>
+                    </ul>
+                    <% } %>
                     </div>
                   </div>
             <% }) %>
