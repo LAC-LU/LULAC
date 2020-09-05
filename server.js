@@ -16,7 +16,7 @@ const isAuth = require("./util");
 var PORT = process.env.PORT;
 var USER = process.env.USER;
 var PASSWORD = process.env.PASSWORD;
-var MONGODB_URL = process.env.MONGODB_URL;
+var MONGODB_URL = process.env.MONGODB_ADDON_URI;
 const app=express();
 
 app.use(bodyparser.urlencoded({extended: true}));
