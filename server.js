@@ -29,6 +29,7 @@ app.use(session({
     cookie: { secure: true }
 }));
 
+
 app.set("view engine", "ejs");
 
 let login = false;
@@ -108,7 +109,7 @@ app.get("/reports/:title",function(req,res){
 
 app.get("/blog",function(req,res){
     let blog;
-
+    console.log("cameeee");
     Blog.find({},(err,items) => {
         if(err){
             console.log(err);
@@ -124,7 +125,7 @@ app.get("/blog",function(req,res){
         }else{
             res.render("blog", {blogs : blog, recent : items,isAuth : login});
         }
-    })
+    });
 });
 
 app.get("/pastevents",function(req,res){
@@ -323,7 +324,7 @@ app.post("/manageReports/deleteReport/:id", isAuth ,function(req,res){
 });
 
 app.get("/manageBlogs", isAuth ,function(req,res){
-    Blog.find({},{title : 1, date : 1},(err,items)=>{
+    Blog.find({},{title : 1, date : 1, authorName : 1},(err,items)=>{
         if(err){
             console.log(err);
         }
@@ -333,13 +334,16 @@ app.get("/manageBlogs", isAuth ,function(req,res){
     })
 });
 app.post("/manageBlogs", isAuth ,upload.single('img'),async (req,res,next)=>{
+    console.log(req.file);
     const title = req.body.title;
     const desc = req.body.desc;
+    const cap = req.body.caption;
     const date = req.body.date;
     const formData = {
         title: title,
         date: date,
         description: desc,
+        caption: cap,
         img:{
             data: fs.readFileSync(path.join(__dirname+'\\middlewares\\'+req.file.filename)),
             contentType: 'image/png'
@@ -352,7 +356,7 @@ app.post("/manageBlogs", isAuth ,upload.single('img'),async (req,res,next)=>{
       }
       Blog.create(formData,(err,item)=>{
           if(err){
-            return res.status(500).send({message: "not uploaded"});
+            return res.status(500).send({message: err});
           }
           else{
             return res.redirect("/manageBlogs");
@@ -393,7 +397,7 @@ app.post("/manageEvents", isAuth ,upload.single('img'),async (req,res,next)=>{
         }
     }
     try {
-        fs.unlinkSync(__dirname + '\\' +req.file.filename);
+        fs.unlinkSync(__dirname + '\\middlewares\\' +req.file.filename);
       } catch (err) {
         console.log(err);
       }
@@ -433,6 +437,34 @@ app.post("/manageTeam/deleteMember/:id", isAuth ,function(req,res){
     });
 });
 
+app.post("/manageBlogs/author/:id", isAuth ,upload.single('img'),function(req,res){
+    const id = req.params.id;
+    const name = req.body.name;
+    const detail = req.body.detail;
+    const update = {
+        authorName: name,
+        authorDetail: detail,
+        authorImg:{
+        data: fs.readFileSync(path.join(__dirname+'\\middlewares\\'+req.file.filename)),
+        contentType: 'image/png'
+         }
+    };
+    try {
+        fs.unlinkSync(__dirname + '\\middlewares\\' +req.file.filename);
+    } catch (err) {
+    console.log(err);
+    }
+    Blog.findOneAndUpdate({ _id : id },update,(err,items)=>{
+    if(err){
+        console.log(ërr);
+    }
+    else{
+        console.log(items);
+        res.redirect("/manageBlogs");
+       }
+    });
+});
+
 app.post("/manageBlogs/deleteBlog/:id", isAuth ,function(req,res){
     const id = req.params.id;
     Blog.deleteOne({ _id : id },(err,items)=>{
@@ -459,7 +491,6 @@ app.post("/manageEvents/deleteEvent/:id", isAuth ,function(req,res){
 
 app.get("/manageTeam", isAuth ,function(req,res){
     let core;
-
     Team.find({category : "Core"}, (err,items) => {
         if(err){
             console.log(err);
@@ -502,3 +533,25 @@ app.post("/manageTeam", isAuth ,upload.single('img'),async (req,res,next)=>{
       })
 });
 
+app.get("/:id",async function(req,res){
+    const id = req.params.id;
+    console.log(id);
+    let blog;
+    await Blog.find({ _id: id },(err,item) => {
+        if(err){
+            console.log(err);
+        }else{
+    console.log(item);
+            blog = item;
+        }
+    });
+    console.log(blog)
+    await Blog.find({_id : {$ne: id}}, (err, items)=>{
+        if(err){
+            console.log(err);
+        }else{
+    res.render("singleBlog", {blog: blog, other: items, isAuth : login});
+        }
+    });
+
+});
