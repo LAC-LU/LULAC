@@ -144,6 +144,7 @@
         <tr>
           <th>Title</th>
           <th>Date</th>
+          <th>Author</th>
           <th>Action</th>
         </tr>
         <% if (blogs.length > 0){ %> 
@@ -151,6 +152,20 @@
             <tr>
                 <td><%= blog.title %></td>
                 <td><%= (blog.date).toString().slice(4,15) %></td>
+                <% if(blog.authorName) { %>
+                    <td><%= blog.authorName %></td>
+                    <% } else { %>
+                        <td>
+                            <form class="form-manage" enctype="multipart/form-data" method="POST" action= <%= "/manageBlogs/author/" + blog._id %> >
+                                <div class="flex-container">
+                                <input type="text" name="name" placeholder="Author Name" required></input>
+                                <input type="text" name="detail" placeholder="Detail" required></input>
+                                <input type="file" name="img" required/>
+                                </div>
+                                <Button>Save Author</Button>
+                            </form>
+                        </td>
+                    <% } %>
                 <td>
                     <form class="formmanage"method="POST" action=<%= "/manageBlogs/deleteBlog/" + blog._id %>>
                         <button>Delete</button>
@@ -170,9 +185,10 @@
       <section class="contact">
         <div class="container text-centre">
         <form method="POST" enctype="multipart/form-data">
-            <input type="text" placeholder="title" name="title" required>
+            <input type="text" placeholder="Title" name="title" required>
+            <input type="text" placeholder="Caption" name="caption" required>
             <input type="date" placeholder="dd-mm-yyyy" name="date" min="1997-01-01" max="2030" required>
-            <textarea cols="30" rows="10" placeholder="description" name="desc" required></textarea>
+            <textarea cols="30" rows="10" placeholder="Description" name="desc" required></textarea>
             <input type="file" name="img" required/>
             <input type="submit" value="Save">
         </form>
