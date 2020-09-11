@@ -17,7 +17,7 @@ const USER = process.env.USERNAME;
 const PASSWORD = process.env.PASSWORD;
 const MONGODB_URL = process.env.MONGODB_ADDON_URI;
 const app=express();
-
+let login = false;
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 app.use(express.static("public"));
@@ -25,13 +25,12 @@ app.use(session({
     secret: 'legalAidCentre-Lucknow',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: { expires: false}
 }));
 
 
 app.set("view engine", "ejs");
 
-var login = false;
 
 mongoose.connect(MONGODB_URL,{ useNewUrlParser: true, useUnifiedTopology: true }, err => { 
         console.log('connected') 
@@ -222,8 +221,8 @@ app.post("/login",function(req,res){
     const uName = req.body.username;
     const password = req.body.password;
     if (uName === USER && password === PASSWORD){
-        login = true;
         req.session.user = uName;
+        login = true;
     }
         res.redirect("/");
 });
@@ -262,12 +261,12 @@ app.post("/manageGallery", isAuth , upload.single('img') , async (req,res,next)=
     const formData = {
         description: desc,
         img:{
-            data: fs.readFileSync(path.join(__dirname + '\\middlewares\\' + req.file.filename)),
+            data: fs.readFileSync(path.join(__dirname + '/middlewares/' + req.file.filename)),
             contentType: 'image/png'
         }
     }
     try {
-        fs.unlinkSync(__dirname + '\\middlewares\\' + req.file.filename);
+        fs.unlinkSync(__dirname + '/middlewares/' + req.file.filename);
       } catch (err) {
         console.log(err);
       }
@@ -287,7 +286,7 @@ app.get("/manageReports", isAuth , function(req,res){
             console.log(err)
         }
         else{
-            res.render("manageReports",{ reports : items , isAuth : login });
+            res.render("manageReports",{ reports : items , isAuth : login});
         }
     })
 });
@@ -297,12 +296,12 @@ app.post("/manageReports", isAuth ,upload.single('pdf'),function(req,res){
     const formData = {
         title: title,
         pdf:{
-            data: fs.readFileSync(path.join(__dirname+'\\middlewares\\'+req.file.filename)),
+            data: fs.readFileSync(path.join(__dirname+'/middlewares/'+req.file.filename)),
             contentType: 'application/pdf'
         }
     }
     try {
-        fs.unlinkSync(__dirname + "\\middlewares\\" + req.file.filename);
+        fs.unlinkSync(__dirname + "/middlewares/" + req.file.filename);
       } catch (err) {
         console.log(err);
       }
@@ -350,12 +349,12 @@ app.post("/manageBlogs", isAuth ,upload.single('img'),async (req,res,next)=>{
         description: desc,
         caption: cap,
         img:{
-            data: fs.readFileSync(path.join(__dirname+'\\middlewares\\'+req.file.filename)),
+            data: fs.readFileSync(path.join(__dirname+'/middlewares/'+req.file.filename)),
             contentType: 'image/png'
         }
     }
     try {
-        fs.unlinkSync(__dirname + '\\middlewares\\' +req.file.filename);
+        fs.unlinkSync(__dirname + '/middlewares/' +req.file.filename);
       } catch (err) {
         console.log(err);
       }
@@ -397,12 +396,12 @@ app.post("/manageEvents", isAuth ,upload.single('img'),async (req,res,next)=>{
         runner: runner,
         description: desc,
         img:{
-            data: fs.readFileSync(path.join(__dirname+'\\middlewares\\'+req.file.filename)),
+            data: fs.readFileSync(path.join(__dirname+'/middlewares/'+req.file.filename)),
             contentType: 'image/png'
         }
     }
     try {
-        fs.unlinkSync(__dirname + '\\middlewares\\' +req.file.filename);
+        fs.unlinkSync(__dirname + '/middlewares/' +req.file.filename);
       } catch (err) {
         console.log(err);
       }
@@ -450,12 +449,12 @@ app.post("/manageBlogs/author/:id", isAuth ,upload.single('img'),function(req,re
         authorName: name,
         authorDetail: detail,
         authorImg:{
-        data: fs.readFileSync(path.join(__dirname+'\\middlewares\\'+req.file.filename)),
+        data: fs.readFileSync(path.join(__dirname+'/middlewares/'+req.file.filename)),
         contentType: 'image/png'
          }
     };
     try {
-        fs.unlinkSync(__dirname + '\\middlewares\\' +req.file.filename);
+        fs.unlinkSync(__dirname + '/middlewares/' +req.file.filename);
     } catch (err) {
     console.log(err);
     }
@@ -519,12 +518,12 @@ app.post("/manageTeam", isAuth ,upload.single('img'),async (req,res,next)=>{
         name: name,
         category: cat,
         img:{
-            data: fs.readFileSync(path.join(__dirname+'\\middlewares\\'+req.file.filename)),
+            data: fs.readFileSync(path.join(__dirname+'/middlewares/'+req.file.filename)),
             contentType: 'image/png'
         }
     }
     try {
-        fs.unlinkSync(__dirname + '\\middlewares\\' +req.file.filename);
+        fs.unlinkSync(__dirname + '/middlewares/' +req.file.filename);
       } catch (err) {
         console.log(err);
       }
