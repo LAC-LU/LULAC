@@ -12,10 +12,10 @@ const Blog = require("./models/blogModel");
 const Team = require("./models/teamModel");
 const Event = require("./models/eventModel");
 const isAuth = require("./util");
-var PORT = process.env.PORT;
-var USER = process.env.USER;
-var PASSWORD = process.env.PASSWORD;
-var MONGODB_URL = process.env.MONGODB_ADDON_URI;
+const PORT = process.env.PORT;
+const USER = process.env.USERNAME;
+const PASSWORD = process.env.PASSWORD;
+const MONGODB_URL = process.env.MONGODB_ADDON_URI;
 const app=express();
 
 app.use(bodyparser.urlencoded({extended: true}));
@@ -31,7 +31,7 @@ app.use(session({
 
 app.set("view engine", "ejs");
 
-let login = false;
+var login = false;
 
 mongoose.connect(MONGODB_URL,{ useNewUrlParser: true, useUnifiedTopology: true }, err => { 
         console.log('connected') 
@@ -225,6 +225,12 @@ app.post("/login",function(req,res){
         login = true;
         req.session.user = uName;
     }
+        res.redirect("/");
+});
+
+app.get("/logout",function(req,res){
+        req.session.destroy();
+        login = false;
         res.redirect("/");
 });
 
