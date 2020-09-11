@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=" ">
+
+    <!-- CSS Files -->
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/loaders.css" rel="stylesheet">
+    <link href="CSS/swiper.min.css" rel="stylesheet">
+    <link href="CSS/animate.min.css" rel="stylesheet">
+    <link href="CSS/icomoon.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/aos.css">
+    <link href="CSS/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/flaticon.css">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/glider.min.css">
+    
+    <!-- Main Stylesheet File -->
+    <link href="CSS/style.css" rel="stylesheet">
+    <style>
+        /* Blog*/
+        .meta {
+            font-size: 10px;
+            display: flex;
+            color: #aaa !important;
+        }
+        
+        .text a {
+            text-decoration: none;
+            color: #333;
+        }
+        .text a:hover {
+            text-decoration: none;
+            color: #00f;
+        }
+        .author-img {
+            height: 100%;
+            width: 100%;
+            max-height: 180px;
+            padding: 10px;
+        }
+        .post-info {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: .1em; 
+        }
+        .post-info > div {
+          display: inline-block; }
+          .post-info > div .seperator {
+            display: inline-block;
+            margin: 0 10px;
+            opacity: .5;
+        }
+        @media (max-width: 991.98px) {
+            .sidebar {
+              margin-top: 5em; 
+            } 
+        }
+        .sidebar-box {
+            margin-bottom: 30px;
+            padding: 0 25px 25px;
+            font-size: 15px;
+            margin-left: 50px;
+            width: 80%; 
+        }
+        .sidebar-box h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .categories, .sidelink {
+            padding: 0; 
+        }
+        .categories li, .sidelink li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+            list-style: none; 
+        }
+        .categories li:last-child, .sidelink li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0; 
+        }
+        .categories li a, .sidelink li a {
+            display: block; 
+        }
+        .categories li a span, .sidelink li a span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #ccc; 
+        }
+        .categories li.active a, .sidelink li.active a {
+            color: #000000;
+            font-style: italic; 
+        }
+        .blog-img img{
+            width: 80%;
+            height: 80%;
+            max-height: 80px;
+            margin: 2px;
+        }
+  </style>
+    <title>Manage Events - LULAC</title>
+  </head>
+  <body>
+      <!-- Top Navigation -->
+
+      <header>
+          <div class="language">
+              <p class="lang">Language
+                  <select>
+                      <option value="100x50">English</option>
+                      <option value="200x75">Hindi</option>
+                      <option value="350x150">Urdu</option>
+                  </select>
+              </p>
+          </div>
+          <div class="top-name row">
+              <div class="name col-lg-6 col-md-6 col-sm-12">
+                  <img class="lac-logo" src="Images/lac-logo1.png">
+              </div>
+              <div class="univ col-lg-6 col-md-6 col-sm-12">
+                  <img class="univ-logo" src="Images/univ.png">
+              </div>
+          </div>
+      </header>
+      
+      <nav class="navigation">
+          <div class="container-fluid">
+              <ul class="main-navigation">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="team">Our Team</a></li>
+                  <li><a href="reports">Our Activites</a>
+                      <ul class="sub-navigation">
+                          <li><a href="gallery">Gallery/Visits</a></li>
+                          <li><a href="reports">Annual Reports</a></li>
+                          <li><a href="blog">Blogs</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="upevents">Events</a>
+                      <ul class="sub-navigation">
+                          <li><a href="pastevents">Past Events</a></li>
+                          <li><a href="upevents">Upcoming Events</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="CaseRegistration">Case Registration</a></li>
+                          <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                          <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                          <li><a href="CaseRegistration">Know your rights</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="certi">Verify your certificate</a></li>
+                  <li><a href="contact">Contact us</a></li>
+                  <% if(isAuth===true) { %> 
+                    <li><a class="admin">Admin</a>
+                      <ul class="sub-navigation01">
+                          <li><a href="manageTeam">Manage Team</a></li>
+                          <li><a href="manageGallery">Manage Gallery</a></li>
+                          <li><a href="manageEvents">Manage Events</a></li>
+                          <li><a href="manageBlogs">Manage Blogs</a></li>
+                          <li><a href="manageReports">Manage Reports</a></li>
+                          <li><a href="logout">Logout</a></li>
+                      </ul>
+                  </li>
+                  <% } %>
+              </ul>
+          </div>
+
+          <div class="container-fluid nav-mobile">
+              <div id="dl-menu" class="dl-menuwrapper">
+                  <button class="dl-trigger">Menu</button>
+                  <ul class="dl-menu">
+                      <li><a href="/">Home</a>
+                      <li><a href="team">Our Team</a></li>
+                      <li><a href="reports">Our Activities</a>
+                          <ul class="dl-submenu">
+                              <li><a href="gallery">Gallery/Visits</a></li>
+                              <li><a href="reports">Annual Report</a></li>
+                              <li><a href="blog">Blogs</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="upevents">Events</a>
+                          <ul class="dl-submenu">
+                              <li><a href="pastevents">Past Events</a></li>
+                              <li><a href="upevents">Upcoming Events</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="CaseRegistration">Vidhi Sahayak</a>
+                          <ul class="dl-submenu">
+                              <li><a href="CaseRegistration">Case Registration</a></li>
+                              <li><a href="CaseRegistration">How to register the complaint?</a></li>
+                              <li><a href="CaseRegistration">Who is eligible to get Legal aid?</a></li>
+                              <li><a href="CaseRegistration">Know your rights</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="certi">Verify your certificate</a></li>
+                      <li><a href="contact">Contact Us</a></li>
+                      <% if(isAuth===true) { %> 
+                        <li><a class="admin">Admin</a>
+                          <ul class="dl-submenu">
+                              <li><a href="manageTeam">Manage Team</a></li>
+                              <li><a href="manageGallery">Manage Gallery</a></li>
+                              <li><a href="manageEvents">Manage Events</a></li>
+                              <li><a href="manageBlogs">Manage Blogs</a></li>
+                              <li><a href="manageReports">Manage Reports</a></li>
+                              <li><a href="logout">Logout</a></li>
+                          </ul>
+                      </li>
+                      <% } %>
+                  </ul>
+               </div>
+          </div>
+      </nav>
+      <div class="co-wrapper main-other" style="background:url(data:image/<%=blog[0].img.contentType%>;base64,<%=blog[0].img.data.toString('base64')%>)">
+        <div class="text-co text-white align-items-center justify-content-center">
+            <div class="about-txt pl-3 pr-3 pb-4">
+                <% if(blog.length > 0){ %>
+                <h1 class="about text-center"><%= blog[0].title %></h1>
+                <hr class="mb-4">
+                <h5 class="mb-3"><%= blog[0].caption %></h5>
+            </div>  
+            <h5><a class="home-link" href="/"><span>Home</span></a> > <a class="other-link" href="/blog"><span>Blog</span> > </a><a class="other-link" href="#"><span><%= blog[0].title %></span></a></h5>
+            <% } %>
+        </div>
+    </div>
+         
+           <!-- blog section-->
+    
+           <div class="container pb-5 pt-4">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="display-3 mt-4 text-center">
+                        <h1><span><%= blog[0].title %></span></h1> 
+                        <hr class="mb-4">   
+                    </div>
+                    <div class="pb-4">
+                        <div class="price pb-4 text-center">
+                            <h5><span><%= (blog[0].date).toString().slice(4,15) %></span></h5>
+                        </div>
+                        <p class="text-justify pt-5 pb-2"><%= blog[0].description %></p>
+                        <% if (blog[0].authorName) { %>
+                        <h4 class="text-center">About the Author</h4>
+                        <hr>
+                        <div class="about-author d-flex p-4 bg-light">
+                            <div class="bio mr-5">
+                                <img src="data:image/<%=blog[0].authorImg.contentType%>;base64, 
+                                <%=blog[0].authorImg.data.toString('base64')%>" alt="Image placeholder" class="img-fluid author-img mb-4">
+                            </div>
+                            <div class="desc text-justify">
+                                <h3 class="text-center"><%= blog[0].authorName %></h3>
+                                <p class="text-center"><%= blog[0].authorDetail %></p>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+
+              <div class="col-lg-4 sidebar">
+                <div class="sidebar-box">
+                    <h4 class="mt-5 pt-5 text-center">Popular Blogs</h4>
+                    <% if( other.length > 0 ){ %>
+                      <% other.forEach(function(item){ %> 
+                    <div class="block-21 mb-4 d-flex">
+                      <div class="text">
+                          <h3 class="heading"><a href="item._id"><%= item.title %></a></h3>
+                          <div class="meta">
+                              <div><span class="fa fa-calendar"></span><%= (item.date).toString().slice(4,15) %></div>
+                              <div><span class="fa fa-user"></span><%= item.authorName %></div>
+                          </div>
+                      </div>
+                  </div>
+                  <% }) %>
+                  <% } %>
+                </div>
+              </div>
+          </div>
+      </div>
+              </div>
+          </div>
+      </div>
+<footer class="ftco-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>The Legal Aid Centre, University of Lucknow, Lucknow has been very active with motto 'free and equal access to justice for all'.</p>
+                    <ul class="ftco-footer-social">
+                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="https://www.facebook.com/lulegalaidclinic/"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12">
+                    <h2>Have a Question?</h2>
+                    <ul>
+                        <li><span class="fa fa-map-marker"></span><span class="text">Faculty of Law, University of Lucknow, Jankipuram, Lucknow, Uttar Pradesh, INDIA</span></li>
+                        <li><a href="#"><span class="fa fa-phone"></span><span class="text">7991200596</span></a></li>
+                        <li><a href="#"><span class="fa fa-envelope"></span><span class="text">vidhiksewalu@gmail.com </span></a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p class="copyright">  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Legal Aid Centre, University of Lucknow </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- loader -->
+  
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- The End! -->
+   
+  
+<!-- Optional JavaScript -->
+<script>
+    var visible = false;
+    function openForm(){
+        visible = true;
+    }
+</script>
+<script src="js/popper.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="lib/jquery/jquery.dlmenu.js"></script>
+<script src="lib/counterup/jquery.waypoints.min.js"></script>
+<script src="lib/counterup/jquery.counterup.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/scrollPosStyler.js"></script>
+<script src="js/main.js"></script>
+<script src="js/glider.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="js/google-map.js"></script>
+</body>
+</html>
