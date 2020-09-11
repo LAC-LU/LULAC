@@ -135,6 +135,7 @@
                               <li><a href="manageEvents">Manage Events</a></li>
                               <li><a href="manageBlogs">Manage Blogs</a></li>
                               <li><a href="manageReports">Manage Reports</a></li>
+			      <li><a href="logout">Logout</a></li>
                           </ul>
                       </li>
                       <% } %>
@@ -180,7 +181,7 @@
                                     <div><a href="#">Admin</a></div>
                                 </div>
                                 <h3 class="heading mt-3"><a href="#"><%= blog.title %></a></h3>
-                                <p><%= blog.description.toString().slice(0,300)%> </p>
+                                <p><%= blog.description.toString().slice(0,5)%> </p>
                               <p><a href= "<%= blog._id %>"> Know More -<i class="ion-ios-arrow-forward"></i></a></p>
                             </div>
                         </div>
