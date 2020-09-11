@@ -214,7 +214,7 @@ a{
 }
 
 .dl-menuwrapper button {
-	background: #e51d1d;
+	background: rgba(255, 185, 72, 0.98);
 	border: none;
 	width: 35px;
 	height: 35px;
@@ -229,7 +229,7 @@ a{
 
 .dl-menuwrapper button:hover,
 .dl-menuwrapper button.dl-active{
-	background: #151414;
+	background: rgba(255, 185, 72, 0.98);
     color: #eee;    
 }
 
@@ -247,7 +247,7 @@ a{
 }
 
 .dl-menuwrapper ul {
-    background-color: #000;
+    background-color: #017aac;
 	padding: 0;
 	list-style: none;
 }
@@ -1082,8 +1082,6 @@ All this is done for any sub-level being entered.
 .counter-box:active {
     opacity: .4;
 }
-/* rootcolor:rgba(255, 185, 72, 0.98);
-rootcolor:#066d81; */
 
 .counter-box {
     color: rgb(26, 7, 7);
@@ -2142,7 +2140,7 @@ h1 span {
     font-stretch: ultra-expanded;
     margin-top: 15px;
     margin-bottom: 15px;
-    color:black;
+    color: ;
     font-size: 40px;
 }
 
@@ -2274,21 +2272,3 @@ form .submit:hover{
     max-width: 85vw;
     padding: 150px !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
