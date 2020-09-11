@@ -86,6 +86,7 @@
                           <li><a href="manageEvents">Manage Events</a></li>
                           <li><a href="manageBlogs">Manage Blogs</a></li>
                           <li><a href="manageReports">Manage Reports</a></li>
+                          <li><a href="logout">Logout</a></li>
                       </ul>
                   </li>
                   <% } %>
@@ -123,12 +124,13 @@
                       <li><a href="contact">Contact Us</a></li>
                       <% if(isAuth===true) { %> 
                         <li><a class="admin">Admin</a>
-                          <ul class="sub-navigation01">
+                          <ul class="dl-submenu">
                               <li><a href="manageTeam">Manage Team</a></li>
                               <li><a href="manageGallery">Manage Gallery</a></li>
                               <li><a href="manageEvents">Manage Events</a></li>
                               <li><a href="manageBlogs">Manage Blogs</a></li>
                               <li><a href="manageReports">Manage Reports</a></li>
+                              <li><a href="logout">Logout</a></li>
                           </ul>
                       </li>
                       <% } %>
@@ -238,7 +240,6 @@ console.log('PDF Version:', bin.match(/^.PDF-([0-9.]+)/)[1]);
 console.log('Create Date:', bin.match(/<xmp:CreateDate>(.+?)<\/xmp:CreateDate>/)[1]);
 console.log('Modify Date:', bin.match(/<xmp:ModifyDate>(.+?)<\/xmp:ModifyDate>/)[1]);
 console.log('Creator Tool:', bin.match(/<xmp:CreatorTool>(.+?)<\/xmp:CreatorTool>/)[1]);
-
 // Embed the PDF into the HTML page and show it to the user
 var obj = document.createElement('object');
 obj.style.width = '100%';
@@ -246,7 +247,6 @@ obj.style.height = '842pt';
 obj.type = 'application/pdf';
 obj.data = 'data:application/pdf;base64,' + b64;
 document.body.appendChild(obj);
-
 // Insert a link that allows the user to download the PDF file
 var link = document.createElement('a');
 link.innerHTML = 'Download PDF file';
