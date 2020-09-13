@@ -138,7 +138,7 @@ app.get("/pastevents",function(req,res){
             event = items;
         }
     });
-    Event.find({date : {$lt: date}}, (err, items)=>{
+    Event.find({date : {$gte: date}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
