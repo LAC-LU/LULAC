@@ -130,7 +130,8 @@ app.get("/pastevents",function(req,res){
     let event;
     const year = new Date().getFullYear()
     const date = new Date((year).toString()+"-01-01");
-    Event.find({date : {$lt: date}},(err,items) => {
+    const enddate = new Date((year-1).toString()+"-12-31");
+    Event.find({date : {$lt: enddate}},(err,items) => {
         if(err){
             console.log(err);
         }else{
