@@ -167,6 +167,7 @@
 				<hr>
               </div>
               <div class="row">
+	      <% if(upevents.length > 0){ %>
                   <% upevents.forEach(function(event){ %>
                   <div class="col-md-4 d-flex">
                       <div class="blog-entry text-center">
@@ -182,7 +183,7 @@
                       </div>
                   </div>
                   <% }) %>
-                  
+                  <% } %>
               </div>
           </div>
       </section>
