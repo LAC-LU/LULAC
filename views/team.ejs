@@ -225,7 +225,7 @@
       <div class="container text-center">
           <h2 class="text-center mb-5"><i><u class="text-warning">Core members</u></i></h2>
           <div class="row">
-	  <% if(coremember.length > 0){ %>
+	  <% if(coremember!=undefined){ %>
             <% coremember.forEach(function(member) { %>
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="row justify-content-center">
@@ -445,7 +445,7 @@
           <div class="container-fluid pt-3 mb-5">
               <h1 class="text-center mb-4 mt-5"><i><u class="text-warning">Other members</u></i></h1>
               <div class="row">
-	      <% if(othermember.length > 0){ %>
+	      <% if(othermember!= undefined){ %>
                   <% othermember.forEach(function(member) { %>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center">
                     <div class="team-card" style="width: 20rem;">
