@@ -149,7 +149,7 @@
           <th>Name</th>
           <th>Action</th>
         </tr>
-        <% if (coremember.length > 0){ %> 
+        <% if (coremember!=undefined){ %> 
         <% coremember.forEach(function(member){ %>
             <tr>
                 <td>
@@ -169,7 +169,7 @@
             <th>Image</th>
             <th>Action</th>
           </tr>
-          <% if (othermember.length > 0){ %> 
+          <% if (othermember!= undefined){ %> 
         <% othermember.forEach(function(member){ %>
             <tr>
                 <td>
