@@ -170,6 +170,7 @@
               </div>
              	  
               <div class="row">
+	      <% if(recent.length > 0){ %>
                 <% recent.forEach(function(item){ %>
                     <div class="col-md-4 d-flex">
                         <div class="blog-entry text-center">
@@ -191,6 +192,7 @@
                         </div>
                     </div>
                 <% }) %>
+		<% } %>
                   
               </div>
           </div>
@@ -206,6 +208,7 @@
           <hr>
           </div>
         <div class="owl-carousel">
+	<% if(events.length > 0){ %>
             <% events.forEach(function(event){ %>
                 <div class="row event-item">
                     <div class="col-lg-6">
@@ -227,6 +230,7 @@
                     </div>
                   </div>
             <% }) %>
+	    <% } %>
         </div>
       </div>
 	<!-- End past Events Section -->
