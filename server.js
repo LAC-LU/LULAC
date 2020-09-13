@@ -126,12 +126,12 @@ app.get("/blog",function(req,res){
     });
 });
 
-app.get("/pastevents",function(req,res){
+app.get("/pastevents", async function(req,res){
     let event;
     const year = new Date().getFullYear()
     const date = new Date((year).toString()+"-01-01");
     const enddate = new Date((year-1).toString()+"-12-31");
-    Event.find({date : {$lt: enddate}},(err,items) => {
+    await Event.find({date : {$lt: enddate}},(err,items) => {
         if(err){
             console.log(err);
         }else{
