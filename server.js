@@ -112,7 +112,7 @@ app.get("/blog",async function(req,res){
     const year = new Date().getFullYear()
     const date = new Date(year.toString()+"-01-01");
     const enddate = new Date((year-1).toString()+"-12-31");
-    await Blog.find({date : {$lt: enddate},(err,items) => {
+    await Blog.find({date : {$lt: enddate}},(err,items) => {
         if(err){
             console.log(err);
         }else{
