@@ -44,7 +44,7 @@ app.get("/",function(req,res){
     res.render("index",{ isAuth : login });
 });
 
-app.get("/team",async function(req,res){
+app.get("/team", function(req,res){
     let core;
 
     Team.find({category : "Core"}, (err,items) => {
@@ -105,12 +105,12 @@ app.get("/reports/:title",function(req,res){
     });
 });
 
-app.get("/blog",async function(req,res){
+app.get("/blog",function(req,res){
     let blog;
     const year = new Date().getFullYear()
     const date = new Date(year.toString()+"-01-01");
     const enddate = new Date((year-1).toString()+"-12-31");
-    await Blog.find({date : {$lt: enddate},(err,items) => {
+    Blog.find({date : {$lt: enddate},(err,items) => {
         if(err){
             console.log(err);
         }else{
@@ -118,7 +118,7 @@ app.get("/blog",async function(req,res){
         }
     });
     
-    await Blog.find({date : {$gte: date}}, (err, items)=>{
+    Blog.find({date : {$gte: date}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -127,19 +127,19 @@ app.get("/blog",async function(req,res){
     });
 });
 
-app.get("/pastevents", async function(req,res){
+app.get("/pastevents", function(req,res){
     let event;
     const year = new Date().getFullYear()
     const date = new Date((year).toString()+"-01-01");
     const enddate = new Date((year-1).toString()+"-12-31");
-    await Event.find({date : {$lt: enddate}},(err,items) => {
+    Event.find({date : {$lt: enddate}},(err,items) => {
         if(err){
             console.log(err);
         }else{
             event = items;
         }
     });
-    await Event.find({date : {$gte: date}}, (err, items)=>{
+    Event.find({date : {$gte: date}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -493,9 +493,9 @@ app.post("/manageEvents/deleteEvent/:id", isAuth ,function(req,res){
     });
 });
 
-app.get("/manageTeam", isAuth ,async function(req,res){
+app.get("/manageTeam", isAuth ,function(req,res){
     let core;
-    await Team.find({category : "Core"}, (err,items) => {
+    Team.find({category : "Core"}, (err,items) => {
         if(err){
             console.log(err);
         }else{
@@ -503,7 +503,7 @@ app.get("/manageTeam", isAuth ,async function(req,res){
         }
     });
 
-    await Team.find({category : "Others"}, (err, items)=>{
+    Team.find({category : "Others"}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -537,11 +537,11 @@ app.post("/manageTeam", isAuth ,upload.single('img'),async (req,res,next)=>{
       })
 });
 
-app.get("/:id",async function(req,res){
+app.get("/:id", function(req,res){
     const id = req.params.id;
     console.log(id);
     let blog;
-    await Blog.find({ _id: id },(err,item) => {
+    Blog.find({ _id: id },(err,item) => {
         if(err){
             console.log(err);
         }else{
@@ -549,7 +549,7 @@ app.get("/:id",async function(req,res){
             blog = item;
         }
     });
-    await Blog.find({_id : {$ne: id}}, (err, items)=>{
+    Blog.find({_id : {$ne: id}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
