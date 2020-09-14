@@ -2267,9 +2267,16 @@ form .submit:hover{
     align-self: center;
 }
 
-#map{
+.maps{
     height: 60vh;
     max-height: 500px !important;
-    max-width: 85vw;
-    padding: 150px !important;
+    width: 500px !important;
+    max-width: 40vw;
+    padding: 20px 20px;
+}
+
+@media(max-width:767px){
+	.maps{
+        max-width: 85vw;
+	}
 }
