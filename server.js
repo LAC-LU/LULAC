@@ -105,19 +105,20 @@ app.get("/reports/:title",function(req,res){
     });
 });
 
-app.get("/blog",function(req,res){
+app.get("/blog",async function(req,res){
     let blog;
-    console.log("cameeee");
-    Blog.find({},(err,items) => {
+    const year = new Date().getFullYear()
+    const date = new Date(year.toString()+"-01-01");
+    const enddate = new Date((year-1).toString()+"-12-31");
+    await Blog.find({date : {$lt: enddate},(err,items) => {
         if(err){
             console.log(err);
         }else{
             blog = items;
         }
     });
-    const year = new Date().getFullYear()
-    const date = new Date(year.toString()+"-01-01");
-    Blog.find({date : {$gte: date}}, (err, items)=>{
+    
+    await Blog.find({date : {$gte: date}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -138,7 +139,7 @@ app.get("/pastevents", async function(req,res){
             event = items;
         }
     });
-    Event.find({date : {$gte: date}}, (err, items)=>{
+    await Event.find({date : {$gte: date}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -338,7 +339,6 @@ app.get("/manageBlogs", isAuth ,function(req,res){
     })
 });
 app.post("/manageBlogs", isAuth ,upload.single('img'),async (req,res,next)=>{
-    console.log(req.file);
     const title = req.body.title;
     const desc = req.body.desc;
     const cap = req.body.caption;
@@ -493,9 +493,9 @@ app.post("/manageEvents/deleteEvent/:id", isAuth ,function(req,res){
     });
 });
 
-app.get("/manageTeam", isAuth ,function(req,res){
+app.get("/manageTeam", isAuth ,async function(req,res){
     let core;
-    Team.find({category : "Core"}, (err,items) => {
+    await Team.find({category : "Core"}, (err,items) => {
         if(err){
             console.log(err);
         }else{
@@ -503,7 +503,7 @@ app.get("/manageTeam", isAuth ,function(req,res){
         }
     });
 
-    Team.find({category : "Others"}, (err, items)=>{
+    await Team.find({category : "Others"}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -549,7 +549,6 @@ app.get("/:id",async function(req,res){
             blog = item;
         }
     });
-    console.log(blog)
     await Blog.find({_id : {$ne: id}}, (err, items)=>{
         if(err){
             console.log(err);
