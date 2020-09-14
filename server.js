@@ -40,21 +40,23 @@ app.listen(PORT,function(req,res){
     console.log("server listening");
 });
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.get("/",function(req,res){
     res.render("index",{ isAuth : login });
 });
 
-app.get("/team", function(req,res){
+app.get("/team", async function(req,res){
     let core;
 
-    Team.find({category : "Core"}, (err,items) => {
+    await Team.find({category : "Core"}, (err,items) => {
         if(err){
             console.log(err);
         }else{
             core = items;
         }
     });
-    Team.find({category : "Others"}, (err, items)=>{
+    await Team.find({category : "Others"}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -105,12 +107,12 @@ app.get("/reports/:title",function(req,res){
     });
 });
 
-app.get("/blog",function(req,res){
+app.get("/blog",async function(req,res){
     let blog;
     const year = new Date().getFullYear()
     const date = new Date(year.toString()+"-01-01");
     const enddate = new Date((year-1).toString()+"-12-31");
-    Blog.find({date : {$lt: enddate},(err,items) => {
+    await Blog.find({date : {$lt: enddate},(err,items) => {
         if(err){
             console.log(err);
         }else{
@@ -118,7 +120,7 @@ app.get("/blog",function(req,res){
         }
     });
     
-    Blog.find({date : {$gte: date}}, (err, items)=>{
+    await Blog.find({date : {$gte: date}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -127,19 +129,19 @@ app.get("/blog",function(req,res){
     });
 });
 
-app.get("/pastevents", function(req,res){
+app.get("/pastevents",async function(req,res){
     let event;
     const year = new Date().getFullYear()
     const date = new Date((year).toString()+"-01-01");
     const enddate = new Date((year-1).toString()+"-12-31");
-    Event.find({date : {$lt: enddate}},(err,items) => {
+    await Event.find({date : {$lt: enddate}},(err,items) => {
         if(err){
             console.log(err);
         }else{
             event = items;
         }
     });
-    Event.find({date : {$gte: date}}, (err, items)=>{
+    await Event.find({date : {$gte: date}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -493,9 +495,9 @@ app.post("/manageEvents/deleteEvent/:id", isAuth ,function(req,res){
     });
 });
 
-app.get("/manageTeam", isAuth ,function(req,res){
+app.get("/manageTeam", isAuth ,async function(req,res){
     let core;
-    Team.find({category : "Core"}, (err,items) => {
+    await Team.find({category : "Core"}, (err,items) => {
         if(err){
             console.log(err);
         }else{
@@ -503,7 +505,7 @@ app.get("/manageTeam", isAuth ,function(req,res){
         }
     });
 
-    Team.find({category : "Others"}, (err, items)=>{
+    await Team.find({category : "Others"}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
@@ -537,11 +539,11 @@ app.post("/manageTeam", isAuth ,upload.single('img'),async (req,res,next)=>{
       })
 });
 
-app.get("/:id", function(req,res){
+app.get("/:id",async function(req,res){
     const id = req.params.id;
     console.log(id);
     let blog;
-    Blog.find({ _id: id },(err,item) => {
+    await Blog.find({ _id: id },(err,item) => {
         if(err){
             console.log(err);
         }else{
@@ -549,7 +551,7 @@ app.get("/:id", function(req,res){
             blog = item;
         }
     });
-    Blog.find({_id : {$ne: id}}, (err, items)=>{
+    await Blog.find({_id : {$ne: id}}, (err, items)=>{
         if(err){
             console.log(err);
         }else{
