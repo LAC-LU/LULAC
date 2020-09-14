@@ -174,7 +174,8 @@
                 <% recent.forEach(function(item){ %>
                     <div class="col-md-4 d-flex">
                         <div class="blog-entry text-center">
-                            <img src="Images/event-1.jpg">
+                            <img src="data:image/<%=item.img.contentType%>;base64, 
+                                <%=item.img.data.toString('base64')%>">
                             <div class="text d-block text-center">
                                 <div class="meta mb-3">
                                     <div><a href=""><%= (item.date).toString().slice(4,15) %></a></div>
